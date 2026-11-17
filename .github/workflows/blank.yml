@@ -26,13 +26,12 @@ jobs:
           gradle-version: 9.9.1
 
       - name: Build Mod
-        working-directory: legion-mod
         run: gradle build --no-daemon
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: Legion-Mod
-          path: legion-mod/build/libs/*.jar
+          path: build/libs/*.jar
           if-no-files-found: error
           
